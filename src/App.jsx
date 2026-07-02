@@ -9,14 +9,40 @@ export default function App() {
   const [cart, setCart] = useState([]);
 
   function addToCart(plant) {
-    //if not in cart, add new entry
-    //if in cart, increase quantity
+    const cartItem = cart.find((item) => {
+      return item.id === plant.id;
+    });
+
+    if (!cartItem) {
+      //if not in cart, add new entry
+      setCart([...cart, { ...plant, quantity: 1 }]);
+    } else {
+      //if in cart, increase quantity
+      const newCart = cart.map((item) => {
+        return item.id === plant.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item;
+      });
+      setCart(newCart);
+    }
   }
 
-  function removeFromCart(plant) {
-    //if not in cart, do nothing
-    //if in cart, but only quantity of 1, remove entry in cart
-    //if in cart, and a quantity larger than 1, reduce quantity
+  function removeFromCart(cartItem) {
+    if (cartItem.quantity === 1) {
+      //if quantity is 1, remove entry in cart
+      const newCart = cart.filter((item) => {
+        return item.id !== cartItem.id;
+      });
+      setCart(newCart);
+    } else {
+      //if quantity is greater than 1, reduce quantity
+      const newCart = cart.map((item) => {
+        return item.id === cartItem.id
+          ? { ...item, quantity: item.quantity - 1 }
+          : item;
+      });
+      setCart(newCart);
+    }
   }
 
   return (

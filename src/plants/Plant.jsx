@@ -5,7 +5,7 @@ export default function Plant({ plant, addToCart }) {
   return (
     <li key={plant.id} className="plant">
       <p className="plantImage">{plant.image}</p>
-      <p>{plant.name}</p>
+      <h3>{plant.name}</h3>
       <button
         onClick={() => {
           addToCart(plant);

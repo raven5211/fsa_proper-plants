@@ -1,15 +1,29 @@
+body {
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
-  margin-bottom: 0;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0.5rem 0;
 }
 
 main {
   display: flex;
+  gap: 0.5rem;
 }
 
 .plants {
-  flex-grow: 3;
+  flex-grow: 1;
 }
 
 .cart {
-  flex-grow: 1;
+  width: 30ch;
 }

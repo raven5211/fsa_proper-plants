@@ -1,0 +1,15 @@
+h1 {
+  margin-bottom: 0;
+}
+
+main {
+  display: flex;
+}
+
+.plants {
+  flex-grow: 3;
+}
+
+.cart {
+  flex-grow: 1;
+}

@@ -1,0 +1,15 @@
+.plantList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 0;
+  margin: 0.5rem;
+}
+
+.plant {
+  list-style: none;
+}
+
+.plantImage {
+  justify-self: center;
+  font-size: 5rem;
+}
